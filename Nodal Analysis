@@ -1,0 +1,55 @@
+Circuit Nodal Analysis Request
+Analysis Requirements
+Perform a complete nodal analysis on the following netlist-defined circuit. The analysis should include:
+
+1. Circuit Description
+Identify the number of essential nodes (excluding the reference node)
+
+Generate an ASCII art representation of the circuit
+
+Label all nodes with their reference designations
+
+2. Nodal Analysis Preparation
+Select the reference node (typically ground)
+
+Assign node voltages (e.g., V₁, V₂) to remaining essential nodes
+
+Determine if any nodes are constrained by voltage sources (with brief justification)
+
+3. Nodal Equations
+Apply KCL at each non-reference node
+
+For voltage sources:
+
+Apply supernode technique if needed
+
+Include constraint equations
+
+Present equations in matrix form: [G][V] = [I]
+
+Include intermediate calculations for conductance terms
+
+4. Solution Requirements
+Solve the system for node voltages (using Gaussian elimination or matrix inversion)
+
+Calculate actual branch voltages and currents from node voltages
+
+Highlight final values in bold
+
+5. Verification
+Verify results using Kirchhoff's laws:
+
+Current law at nodes
+
+Voltage law around loops
+
+Perform power balance check
+
+Netlist Input
+V1 1 0 DC 10 ; 10V source between node 1 and ground (0)
+R1 1 2 1k ; R1 = 1kΩ between nodes 1 and 2
+R2 2 3 2.2k ; R2 = 2.2kΩ between nodes 2 and 3
+R3 3 4 3.3k ; R3 = 3.3kΩ between nodes 3 and 4
+R4 4 0 4.7k ; R4 = 4.7kΩ between node 4 and ground
+R5 3 0 5k ; R5 = 5kΩ between node 3 and ground
+.end
